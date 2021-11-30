@@ -7,23 +7,23 @@ app.listen(3000, () => {
     console.log('App running at http://localhost:3000');
 });
 
-app.get('/', (req, res) => {
-    const path = []
+app.get('/', async (req, res) => {
+    const path = "./"
     const result = {
       path,
-      dir: dir(path),
+      dir: await dir(),
     };
     res.json(result);
 });
 
-app.get('/dir', (req, res) => {
+app.get('/dir', async (req, res) => {
     const path = String(req.query.path);
     //console.log(path);
-
     const result = {
       path,
-      dir: dir(path),
+      dir: await dir(path),
     };
 
-    res.json(result);
-  });  
+    console.log(dir(path))
+    res.json(result); 
+  });
