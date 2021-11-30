@@ -7,8 +7,8 @@ export async function dir(path="") {
     const command = `dir ${path}`;
 
     const result = await execAsync(command);
-
+    
     console.log('dir', result);
-
-    return [];
+    return result;
 };
+
