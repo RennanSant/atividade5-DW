@@ -8,7 +8,11 @@ app.listen(3000, () => {
 });
 
 app.get('/', (req, res) => {
-    const result = dir();
+    const path = []
+    const result = {
+      path,
+      dir: dir(path),
+    };
     res.json(result);
 });
 
